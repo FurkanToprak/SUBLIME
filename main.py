@@ -10,7 +10,7 @@ def print_help():
     # TODO:
     logger.info("HELP")
 
-if __name__ == "__main__":
+def main():
     if len(sys.argv) < 2:
         print_usage()
     elif sys.argv[1] == "help":
@@ -23,3 +23,6 @@ if __name__ == "__main__":
         pass # TODO:
     else:
         print_usage()
+
+if __name__ == "__main__":
+    main()
