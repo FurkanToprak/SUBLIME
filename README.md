@@ -1,4 +1,4 @@
-# lime-rs-code
+# lime-rs-rewrite
 An ongoing rewrite of coionobrega's [explaining-recommendations](https://github.com/caionobrega/explaining-recommendations) repository, which is an implementation of LIME-RS, as discussed in [this paper](https://dl.acm.org/doi/10.1145/3297280.3297443).
 
 ## Disclaimer
