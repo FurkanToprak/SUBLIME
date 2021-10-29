@@ -11,12 +11,11 @@ def log_train_usage():
     logger.info("Usage: python3 main.py train <experimentName> <useFeatures [T/F]>")
 
 def print_help():
-    # TODO:
-    logger.info("HELP")
+    logger.info("Usage: python3 main.py <help/train/test/predict/limers>")
 
 def main():
-    print("See output in directory log/")
-    if len(sys.argv) < 2:
+    print("All output in directory log/")
+    if len(sys.argv) < 3:
         log_usage()
     elif sys.argv[1] == "help":
         print_help()
@@ -34,7 +33,7 @@ def main():
     elif sys.argv[1] == "limers":
         pass # TODO:
     else:
-        print_usage()
+        log_usage()
 
 if __name__ == "__main__":
     main()
