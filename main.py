@@ -1,10 +1,14 @@
 import sys
+from src.utils import get_logger
+
+logger = get_logger("main")
 
 def print_usage():
-    print("Usage python3: main.py help")
+    logger.info("Usage python3: main.py help")
 
 def print_help():
-    print("TODO:")
+    # TODO:
+    logger.info("HELP")
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
@@ -12,10 +16,10 @@ if __name__ == "__main__":
     elif sys.argv[1] == "help":
         print_help()
     elif sys.argv[1] == "train":
-        pass
+        pass # TODO:
     elif sys.argv[1] == "predict":
-        pass
+        pass # TODO:
     elif sys.argv[1] == "limers":
-        pass
+        pass # TODO:
     else:
         print_usage()
