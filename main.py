@@ -17,6 +17,8 @@ def main():
         print_help()
     elif sys.argv[1] == "train":
         pass # TODO:
+    elif sys.argv[1] == "test":
+        pass # TODO:
     elif sys.argv[1] == "predict":
         pass # TODO:
     elif sys.argv[1] == "limers":
