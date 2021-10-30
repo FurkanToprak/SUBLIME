@@ -1,5 +1,5 @@
 import sys
-from src.utils import get_logger
+from src.utils import config_logging, get_logger
 from experiment.train_rec import train_rec
 
 logger = get_logger("main")
@@ -25,7 +25,8 @@ def main():
             return
         experimentName = sys.argv[2]
         useFeatures = sys.argv[3]
-        train_rec()
+        config_logging(experimentName)
+        train_rec(experimentName, useFeatures)
     elif sys.argv[1] == "test":
         pass # TODO:
     elif sys.argv[1] == "predict":

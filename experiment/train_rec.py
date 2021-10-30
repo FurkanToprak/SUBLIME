@@ -9,7 +9,7 @@ def train_rec(experimentName: str, useFeatures: bool):
     dataset = load_data()
     logger.info(f"Starting training [{experimentName}] {'with' if useFeatures else 'without'} features.")
     # instantiate model
-    rec_model = FMRec()
+    rec_model = FMRec(experimentName=experimentName, dataset=dataset, useFeatures=useFeatures)
     rec_model.train()
     # train model
     rec_model.train()
