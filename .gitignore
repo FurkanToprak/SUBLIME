@@ -1,6 +1,6 @@
 log/*
 !log/.stay
-dataset/*
-!dataset/README.txt
+datasets/*
+!datasets/README.md
 **/__pycache__/*
 **/__pycache__
