@@ -7,7 +7,10 @@ datasets/
 ├── ml-20m
 │   ├── genome-scores.csv
 │   ├── genome-tags.csv
+│   ├── links.csv
 │   ├── movies.csv
-│   └── ratings.csv
+│   ├── ratings.csv
+│   ├── README.txt
+│   └── tags.csv
 └── README.md
 ```
