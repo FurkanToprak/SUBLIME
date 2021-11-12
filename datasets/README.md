@@ -11,6 +11,9 @@ datasets/
 │   ├── movies.csv
 │   ├── ratings.csv
 │   ├── README.txt
-│   └── tags.csv
+│   ├── tags.csv
+│   ├── training.pickle [after preprocessing]
+│   ├── testing.pickle [after preprocessing]
+│   └── validation.pickle [after preprocessing]
 └── README.md
 ```
