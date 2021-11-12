@@ -13,3 +13,6 @@ Run `pipenv install`.
 1) Run environment `pipenv shell`.
 2) Run with `python3 main.py` 
 3) Deactivate environment with `exit`.
+
+## Configuring Dataset
+see `datasets/README.md` and `experiment/config.py`.
