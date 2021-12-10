@@ -1,6 +1,6 @@
-# lime-rs-rewrite
-An ongoing rewrite of coionobrega's [explaining-recommendations](https://github.com/caionobrega/explaining-recommendations) repository, which is an implementation of LIME-RS, as discussed in [this paper](https://dl.acm.org/doi/10.1145/3297280.3297443).
-
+# Semantically Understanding Bias with LIME
+Currently an ongoing rewrite of coionobrega's [explaining-recommendations](https://github.com/caionobrega/explaining-recommendations) repository, which is an implementation of LIME-RS, as discussed in [this paper](https://dl.acm.org/doi/10.1145/3297280.3297443).
+Will hopefully be used to understand the gieven of popularity bias in any given recommendation.
 ## Disclaimer
 I am not the author of the novel LIME algorithm or the implementation for Recommender Systems (LIME-RS). I merely wrote this to use in my own research, as the original codebase was not useable. 
 
