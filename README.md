@@ -3,7 +3,7 @@ Currently an ongoing rewrite of coionobrega's [explaining-recommendations](https
 
 Will hopefully be used to understand the effect of popularity bias in any given recommendation.
 ## Disclaimer
-I am not the author of the novel LIME algorithm or the implementation for Recommender Systems (LIME-RS). I merely wrote this to use in my own research, as the original codebase was not useable. 
+I am not the author of the novel LIME algorithm or the implementation for Recommender Systems (LIME-RS). I merely wrote this to use in my own research, as the [original codebase](https://github.com/caionobrega/explaining-recommendations) was not usable. 
 
 ## Instructions
 
