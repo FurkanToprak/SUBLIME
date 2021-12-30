@@ -17,3 +17,9 @@ datasets/
 │   └── validation.pickle [after preprocessing]
 └── README.md
 ```
+
+# TODO:
+- Load movieset data
+- Create a training and test split, with only user_id and movie_id (drop rating and timestamp) (for PyFM don't drop rating data)
+- Create a csv with item info, in the format of movie_id, feature, value
+- Create a pivoted version by movie_id
