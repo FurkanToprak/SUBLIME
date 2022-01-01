@@ -12,13 +12,21 @@ datasets/
 │   ├── ratings.csv
 │   ├── README.txt
 │   ├── tags.csv
-│   ├── training.pickle [after preprocessing]
-│   ├── testing.pickle [after preprocessing]
-│   └── validation.pickle [after preprocessing]
+│   ├── item_features.csv [after preprocessing]
+│   ├── training.csv [after preprocessing]
+│   ├── testing.csv [after preprocessing]
+│   └── validation.csv [after preprocessing]
 └── README.md
 ```
 
 # TODO:
-- Load movieset data
-- Create a csv with item info, in the format of movie_id, feature, value
-- Create a pivoted version by movie_id
+- load dataset into a Dataset()  (data_utils.py)
+- refactor model.py
+- train + pickle FM model (train_rec.py) 
+- generate predictions (predict.py)
+- evaluate model (evaluate_model.py)
+- refactor lime_rs.py
+- generate LIMERS (run_lime_rs.py)
+- generate bias as a feature
+- generate bias explanations
+- evalutate bias explanations
