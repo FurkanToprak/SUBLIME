@@ -15,3 +15,7 @@ def train_rec(experimentName: str, useFeatures: bool):
     logger.info(f"Starting training [{experimentName}] {'with' if useFeatures else 'without'} features.")
     # train model
     rec_model.train()
+    # save model
+    logger.info('Pickling model')
+    # TODO: pickle model
+    logger.info('Pickled model')
