@@ -9,8 +9,9 @@ logger = get_logger("train_rec")
 def train_rec(experimentName: str, useFeatures: bool):
     logger.info(f"Loading data for [{experimentName}].")
     dataset = Dataset(datasetPath)
-    logger.info(f"Starting training [{experimentName}] {'with' if useFeatures else 'without'} features.")
     # instantiate model
+    logger.info(f"Initialized FM model for model [{experimentName}].")
     rec_model = FMRec(experimentName=experimentName, dataset=dataset, useFeatures=useFeatures)
+    logger.info(f"Starting training [{experimentName}] {'with' if useFeatures else 'without'} features.")
     # train model
     rec_model.train()
