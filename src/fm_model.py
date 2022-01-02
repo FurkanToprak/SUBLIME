@@ -1,6 +1,11 @@
+from model import Model
 from pyfm import pylibfm
 import pandas as pd
+import numpy as np
 from src.dataset import Dataset
+from utils import get_logger
+
+logger = get_logger("fm_model")
 
 class FMRec(Model):
     def __init__(self, rec_name, dataset, uses_features):
@@ -17,18 +22,18 @@ class FMRec(Model):
 
     def train(self):
         if self.uses_features:
-            df = pd.merge(self.dataset.training_df, self.dataset.item_features, on="item_id", how="left")
+            df = pd.merge(self.dataset.train_features, self.dataset.item_features, on="item_id", how="left")
         else:
-            df = self.dataset.training_df.copy()
+            df = self.dataset.train_features.copy()
 
         training_data, training_columns = Dataset.convert_to_pyfm_format(df)
         self.one_hot_columns = training_columns
 
-        self.fm.fit(training_data, self.dataset.y_train)
+        self.fm.fit(training_data, self.dataset.train_labels)
 
     def predict(self, df):
         if self.uses_features:
-            df = pd.merge(df, self.dataset.item_features, on="item_id", how="left")
+            df = pd.merge(df, self.dataset.item_features, on="movieId", how="left")
 
         all_predictions = list()
 
@@ -51,7 +56,7 @@ class FMRec(Model):
         # get predictions
         for uid in user_ids:
             logger.info("recommending for user: {}".format(uid))
-            df = self._get_candidates(uid, self.dataset.training_df, filter_history=filter_history)
+            df = self._get_candidates(uid, self.dataset.train_features, filter_history=filter_history)
             predictions = self.predict(df)
             df['prediction'] = predictions
 
@@ -59,5 +64,5 @@ class FMRec(Model):
         result = pd.concat(df_list)
 
         # Sort by uid and predictions
-        result.sort_values(by=['user_id', 'prediction'], inplace=True, ascending=[True, False])
-        return result.groupby("user_id").head(n)
+        result.sort_values(by=['userId', 'prediction'], inplace=True, ascending=[True, False])
+        return result.groupby("userId").head(n)

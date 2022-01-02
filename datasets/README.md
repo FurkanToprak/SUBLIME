@@ -18,15 +18,3 @@ datasets/
 │   └── validation.csv [after preprocessing]
 └── README.md
 ```
-
-# TODO:
-- refactor model.py
-- train + pickle FM model (train_rec.py) 
-- generate predictions (predict.py)
-- evaluate model (evaluate_model.py)
-- refactor lime_rs.py
-- generate LIMERS (run_lime_rs.py)
-- generate bias as a feature
-- generate bias explanations
-- evalutate bias explanations
-- validation
