@@ -11,6 +11,7 @@ scikit-learn = "*"
 cython = "*"
 lime = "*"
 apyori = "*"
+pyfm = {git = "https://github.com/coreylynch/pyFM"}
 
 [dev-packages]
 

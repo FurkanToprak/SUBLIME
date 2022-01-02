@@ -20,7 +20,6 @@ datasets/
 ```
 
 # TODO:
-- load dataset into a Dataset()  (data_utils.py)
 - refactor model.py
 - train + pickle FM model (train_rec.py) 
 - generate predictions (predict.py)

@@ -1,3 +1,7 @@
+from pyfm import pylibfm
+import pandas as pd
+from src.dataset import Dataset
+
 class FMRec(Model):
     def __init__(self, rec_name, dataset, uses_features):
         super(FMRec, self).__init__(rec_name, dataset, uses_features)
