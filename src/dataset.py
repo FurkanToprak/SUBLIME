@@ -2,16 +2,31 @@
 import numpy as np
 import pandas as pd
 from scipy import sparse
+from os import path
 
 
 class Dataset:
-    def __init__(self, training_df, y_train, test_df, y_test, item_features):
+    def __init__(self, dataset_path):
         """ Model-agnostic representation of a dataset. """
-        self.training_df = training_df
-        self.y_train = y_train
-        self.test_df = test_df
-        self.y_test = y_test
-        self.item_features = item_features
+        trainDataPath = path.join(dataset_path, "training.csv")
+        testDataPath = path.join(dataset_path, "testing.csv")
+        validationDataPath = path.join(dataset_path, "validation.csv")
+        itemFeaturesPath = path.join(dataset_path, 'item_features.csv')
+        train_df = pd.read_csv(trainDataPath, dtype={"userId": str, "movieId": str, "rating": float})
+        test_df = pd.read_csv(testDataPath, dtype={"userId": str, "movieId": str, "rating": float})
+        validation_df = pd.read_csv(validationDataPath, dtype={"userId": str, "movieId": str, "rating": float})
+        item_features_df = pd.read_csv(itemFeaturesPath, dtype={"userId": str, "movieId": str, "rating": float})
+        # seperate ratings as labels
+        self.train_labels = train_df['ratings']
+        self.test_labels = test_df['ratings']
+        # drop ratings from features
+        train_df.drop(columns=['rating'], inplace=True)
+        test_df.drop(columns=['rating'], inplace=True)
+        # assign remaining
+        self.train_features = train_df
+        self.test_features = test_df
+        self.validation = validation_df # TODO: validation?
+        self.item_features = item_features_df
 
     @staticmethod
     def convert_to_pyfm_format(df, columns=None):
