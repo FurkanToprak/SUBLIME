@@ -1,7 +1,7 @@
 from src.dataset import Dataset
 from src.utils import get_logger
 from src.fm_model import FMRec
-from experiment.config import datasetPath, outputPath
+from experiment.config import datasetPath, trainedModelPath
 import pickle
 from os import path
 
@@ -17,8 +17,7 @@ def train_rec(experimentName: str, useFeatures: bool):
     # train model
     rec_model.train()
     # save model
-    picklePath = path.join(outputPath, f'{experimentName}-trained.pickle')
-    logger.info(f'Pickling model to {picklePath}')
-    with open(picklePath, 'wb') as pickleFile:
+    logger.info(f'Pickling model to {trainedModelPath}')
+    with open(trainedModelPath, 'wb') as pickleFile:
         pickle.dump(rec_model, pickleFile)
     logger.info('Pickled model.')
