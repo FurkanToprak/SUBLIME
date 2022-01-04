@@ -10,5 +10,3 @@ def get_logger(name=None):
     logger.setLevel(logging.INFO)
 
     return logger
-
-def pickle_dump():

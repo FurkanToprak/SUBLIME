@@ -17,8 +17,8 @@ class Dataset:
         validation_df = pd.read_csv(validationDataPath, dtype={"userId": str, "movieId": str, "rating": float})
         item_features_df = pd.read_csv(itemFeaturesPath, dtype={"userId": str, "movieId": str, "rating": float})
         # seperate ratings as labels
-        self.train_labels = train_df['ratings']
-        self.test_labels = test_df['ratings']
+        self.train_labels = train_df['rating']
+        self.test_labels = test_df['rating']
         # drop ratings from features
         train_df.drop(columns=['rating'], inplace=True)
         test_df.drop(columns=['rating'], inplace=True)

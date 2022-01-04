@@ -1,9 +1,9 @@
-from model import Model
+from src.model import Model
 from pyfm import pylibfm
 import pandas as pd
 import numpy as np
 from src.dataset import Dataset
-from utils import get_logger
+from src.utils import get_logger
 
 logger = get_logger("fm_model")
 
@@ -22,7 +22,7 @@ class FMRec(Model):
 
     def train(self):
         if self.uses_features:
-            df = pd.merge(self.dataset.train_features, self.dataset.item_features, on="item_id", how="left")
+            df = pd.merge(self.dataset.train_features, self.dataset.item_features, on="movieId", how="left")
         else:
             df = self.dataset.train_features.copy()
 

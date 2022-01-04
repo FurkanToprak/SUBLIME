@@ -1,7 +1,6 @@
-from dataset import Dataset
+from src.dataset import Dataset
 from src.utils import get_logger
-from fm_model import FMRec
-from dataset import Dataset
+from src.fm_model import FMRec
 from experiment.config import datasetPath, outputPath
 import pickle
 from os import path
@@ -13,12 +12,13 @@ def train_rec(experimentName: str, useFeatures: bool):
     dataset = Dataset(datasetPath)
     # instantiate model
     logger.info(f"Initialized FM model for model [{experimentName}].")
-    rec_model = FMRec(experimentName=experimentName, dataset=dataset, useFeatures=useFeatures)
+    rec_model = FMRec(rec_name=experimentName, dataset=dataset, uses_features=useFeatures)
     logger.info(f"Starting training [{experimentName}] {'with' if useFeatures else 'without'} features.")
     # train model
     rec_model.train()
     # save model
     picklePath = path.join(outputPath, experimentName)
     logger.info(f'Pickling model to {picklePath}')
-    pickle.dump(rec_model, picklePath)
+    with open(picklePath, 'wb') as pickleFile:
+        pickle.dump(rec_model, pickleFile)
     logger.info('Pickled model.')
