@@ -2,6 +2,7 @@ from src.model import Model
 from pyfm import pylibfm
 import pandas as pd
 import numpy as np
+from sklearn.preprocessing import normalize
 from src.dataset import Dataset
 from src.utils import get_logger
 
@@ -29,7 +30,7 @@ class FMRec(Model):
         training_data, training_columns = Dataset.convert_to_pyfm_format(df)
         self.one_hot_columns = training_columns
 
-        self.fm.fit(training_data, self.dataset.train_labels)
+        self.fm.fit(normalize(training_data), self.dataset.train_labels)
 
     def predict(self, df):
         if self.uses_features:
