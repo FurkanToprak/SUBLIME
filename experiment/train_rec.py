@@ -17,7 +17,7 @@ def train_rec(experimentName: str, useFeatures: bool):
     # train model
     rec_model.train()
     # save model
-    picklePath = path.join(outputPath, experimentName)
+    picklePath = path.join(outputPath, f'{experimentName}-trained.pickle')
     logger.info(f'Pickling model to {picklePath}')
     with open(picklePath, 'wb') as pickleFile:
         pickle.dump(rec_model, pickleFile)

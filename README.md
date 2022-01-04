@@ -21,7 +21,6 @@ see `datasets/README.md` and `experiment/config.py`.
 Use `data_preprocessing.ipynb` to produce preprocessed training, testing, and validation splits for whichever dataset you choose.
 
 # TODO:
-- test code so far
 - generate predictions (predict.py)
 - evaluate model (evaluate_model.py)
 - refactor lime_rs.py
