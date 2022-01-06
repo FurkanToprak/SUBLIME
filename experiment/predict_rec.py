@@ -19,10 +19,10 @@ def predict_rec(experimentName: str):
     logger.info(f"Saving predictions.")
     dataset.test_features.to_csv(predictionsPath)
 
-    # usersToRecommendTo = ["1", "2", "3", "5", "8", "13", "21", "34"]
-    # logger.info(f"Generating recommendations for users {usersToRecommendTo}")
-    # recs = rec_model.recommend(usersToRecommendTo)
-    # logger.info(f"Saving recommendation")
-    # recs.to_csv(recommendationsPath)
+    usersToRecommendTo = ["1", "2", "3", "5", "8", "13", "21", "34"]
+    logger.info(f"Generating recommendations for users {usersToRecommendTo}")
+    recs = rec_model.recommend(usersToRecommendTo)
+    logger.info(f"Saving recommendation")
+    recs.to_csv(recommendationsPath)
 
 

@@ -39,7 +39,6 @@ class FMRec(Model):
         # divide into 10 chunks to avoid memory errors
         chunk_size = 10
         chunks = np.array_split(df, chunk_size)
-        print(chunks)
         for chunck in chunks:
             # convert
             test_data, _ = Dataset.convert_to_pyfm_format(chunck)

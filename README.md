@@ -16,9 +16,16 @@ Run `pipenv install`.
 3) Deactivate environment with `exit`.
 
 ## Configuring Dataset
-see `datasets/README.md` and `experiment/config.py`.
+see `datasets/README.md` and `experiment/config.py` to configure datasets, and I/O paths.
+
 ### Data Preprocessing
 Use `data_preprocessing.ipynb` to produce preprocessed training, testing, and validation splits for whichever dataset you choose.
+
+### Output
+Outputs are dumped into `outputs/`, with the following files:
+- `trained.pickle`: Pickled pretrained model.
+- `predictions.csv`: Generated predictions
+- `recommendations.csv`: Generated recommendations
 
 # TODO:
 - generate predictions (predict.py)
