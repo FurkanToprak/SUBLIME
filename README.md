@@ -22,6 +22,7 @@ Use `data_preprocessing.ipynb` to produce preprocessed training, testing, and va
 
 # TODO:
 - generate predictions (predict.py)
+- fix model.predict()
 - evaluate model (evaluate_model.py)
 - refactor lime_rs.py
 - generate LIMERS (run_lime_rs.py)

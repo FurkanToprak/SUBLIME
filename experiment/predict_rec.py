@@ -1,6 +1,5 @@
 from src.dataset import Dataset
 from src.utils import get_logger
-from src.fm_model import FMRec
 from experiment.config import datasetPath, trainedModelPath, predictionsPath, recommendationsPath
 import pickle
 from os import path
@@ -16,8 +15,9 @@ def predict_rec(experimentName: str):
         rec_model = pickle.load(pickleFile)
     logger.info(f"Generating predictions.")
     predictions = rec_model.predict(dataset.test_features)
+    dataset.test_features['prediction'] = predictions
     logger.info(f"Saving predictions.")
-    predictions.to_csv(predictionsPath)
+    dataset.test_features.to_csv(predictionsPath)
 
     usersToRecommendTo = ["1", "2", "3", "5", "8", "13", "21", "34"]
     logger.info(f"Generating recommendations for users {usersToRecommendTo}")

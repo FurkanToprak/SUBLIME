@@ -32,7 +32,7 @@ class FMRec(Model):
 
         self.fm.fit(normalize(training_data), self.dataset.train_labels)
 
-    def predict(self, df):
+    def predict(self, df): # TODO: fix
         if self.uses_features:
             df = pd.merge(df, self.dataset.item_features, on="movieId", how="left")
 
