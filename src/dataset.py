@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 from scipy import sparse
 from os import path
+from sklearn.preprocessing import normalize
 
 
 class Dataset:
@@ -44,5 +45,5 @@ class Dataset:
         # compressed sparse matrix representation
         data_sparse = sparse.csr_matrix(df_ohe.astype(np.float))
         data_sparse = data_sparse.astype(np.float)
-        # return data and corresponding columns
-        return data_sparse, df_ohe.columns
+        # return normalized data and corresponding columns
+        return normalize(data_sparse), df_ohe.columns
